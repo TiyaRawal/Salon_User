@@ -3,7 +3,7 @@ import Breadcrumbs from '../common/Breadcrumbs'
 import Header from '../common/Header'
 import Footer from '../common/Footer'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import api from '../utils/AxiosConfig'
+import api, { baseURL } from '../utils/AxiosConfig'
 
 function Servicedetails() {
     return (
@@ -136,7 +136,7 @@ function ServiceDetailSection() {
                                 <div className="col-lg-6">
                                     <div className="service-item wow fadeIn service-detail-main">
                                         <div className="thumb">
-                                            <img src={serviceDetail.service_image ? `http://localhost:8000${serviceDetail.service_image}` : "/img/services/1.jpg"} alt={serviceDetail.service_name} />
+                                            <img src={serviceDetail.service_image ? `${baseURL}${serviceDetail.service_image}` : "/img/services/1.jpg"} alt={serviceDetail.service_name} />
                                         </div>
                                         <div className="service-info service-detail-content">
                                             <h3>{serviceDetail.service_name}</h3>

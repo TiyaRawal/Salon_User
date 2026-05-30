@@ -3,7 +3,7 @@ import Header from '../common/Header'
 import Footer from '../common/Footer'
 import Breadcrumbs from '../common/Breadcrumbs'
 import HomeAppointment from '../common/HomeAppointment'
-import api from '../utils/AxiosConfig'
+import api, { baseURL } from '../utils/AxiosConfig'
 import { Link, useLocation } from 'react-router-dom'
 
 function SubcategoriesByCategory() {
@@ -74,7 +74,7 @@ function SubcategoriesByCategoryCard() {
                                             <div className="col-sm-6 col-md-4" key={value._id}>
                                                 <div className="gallery-item wow fadeIn">
                                                     <Link to={`/servicesbysubcategory/${value._id}`} className="venobox" data-gall="gallery">
-                                                        <img src={value.subcategory_image ? `http://localhost:8000${value.subcategory_image}` : "/img/gallery/1.jpg"} style={{height:"100%", width:"100%"}} alt={value.subcategory_name} />
+                                                        <img src={value.subcategory_image ? `${baseURL}${value.subcategory_image}` : "/img/gallery/1.jpg"} style={{height:"100%", width:"100%"}} alt={value.subcategory_name} />
                                                         <div className="gallery-caption text-center">
                                                             <i className="fa fa-heart-o" />
                                                             <h3>{value.subcategory_name}</h3>

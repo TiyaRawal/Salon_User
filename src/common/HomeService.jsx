@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import api from "../utils/AxiosConfig"
+import api, { baseURL } from "../utils/AxiosConfig"
 
 function HomeService() {
     let [services, setServices] = useState([])
@@ -49,7 +49,7 @@ function HomeService() {
                                             <div className="col-md-4" key={service._id}>
                                                 <div className="service-item wow fadeIn">
                                                     <div className="thumb">
-                                                            <Link to={`/servicedetails/${service._id}`}><img src={`http://localhost:8000${service.service_image}`} style={{ height: "200px" }} alt={service.service_name} /></Link>
+                                                            <Link to={`/servicedetails/${service._id}`}><img src={`${baseURL}${service.service_image}`} style={{ height: "200px" }} alt={service.service_name} /></Link>
                                                     </div>
                                                     <div className="service-info text-center">
                                                             <h3><Link to={`/servicedetails/${service._id}`}>{service.service_name}</Link></h3>

@@ -5,7 +5,7 @@ import Breadcrumbs from '../common/Breadcrumbs'
 import HomeService from '../common/HomeService'
 import HomeUs from '../common/HomeUs'
 import HomeAppointment from '../common/HomeAppointment'
-import api from '../utils/AxiosConfig'
+import api, { baseURL } from '../utils/AxiosConfig'
 import { Link } from 'react-router-dom'
 
 function Service() {
@@ -73,7 +73,7 @@ function ServiceCard() {
                       <div className="col-md-4" key={value._id}>
                         <div className="service-item wow fadeIn">
                           <div className="thumb">
-                            <Link to={`/servicedetails/${value._id}`}><img src={value.service_image ? `http://localhost:8000${value.service_image}` : "/img/services/1.jpg"} style={{height:"100%", width:"100%"}} alt={value.service_name} /></Link>
+                            <Link to={`/servicedetails/${value._id}`}><img src={value.service_image ? `${baseURL}${value.service_image}` : "/img/services/1.jpg"} style={{height:"100%", width:"100%"}} alt={value.service_name} /></Link>
                           </div>
                           <div className="service-info text-center">
                             <h3><Link to={`/servicedetails/${value._id}`}>{value.service_name}</Link></h3>

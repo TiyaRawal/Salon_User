@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Breadcrumbs from '../common/Breadcrumbs'
 import Footer from '../common/Footer'
 import Header from '../common/Header'
-import api from '../utils/AxiosConfig'
+import api, { baseURL } from '../utils/AxiosConfig'
 import { Link } from 'react-router-dom'
 
 function Profile() {
@@ -187,7 +187,7 @@ function UserProfileForm() {
                                     {/* Profile Image */}
                                     <div className="text-center mb-4">
                                         <img
-                                            src={user.profile_image ? `http://localhost:8000${user.profile_image}` : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCKnkcldvTLRKwVmiqfMYdxuK04cx_OiBQnQ&s"}
+                                            src={user.profile_image ? `${baseURL}${user.profile_image}` : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCKnkcldvTLRKwVmiqfMYdxuK04cx_OiBQnQ&s"}
                                             alt="profile"
                                             style={{ borderRadius: "50%", width: "120px", height: "120px" }}
                                         />

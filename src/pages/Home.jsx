@@ -5,7 +5,7 @@ import Header from '../common/Header'
 import Footer from '../common/Footer'
 import HomeUs from '../common/HomeUs'
 import HomeService from '../common/HomeService'
-import api from '../utils/AxiosConfig'
+import api, { baseURL } from '../utils/AxiosConfig'
 import { Link } from 'react-router-dom'
 
 function Home() {
@@ -228,8 +228,8 @@ function HomeGallery() {
                                         <>
                                             <div className="col-sm-6 col-md-4">
                                                 <div className="gallery-item wow fadeIn">
-                                                    <a href={value.category_image ? `http://localhost:8000${value.category_image}` : "/img/gallery/1.jpg"} className="venobox" data-gall="gallery">
-                                                        <img src={value.category_image ? `http://localhost:8000${value.category_image}` : "/img/gallery/1.jpg"} alt={value.category_name || "Category"} />
+                                                    <a href={value.category_image ? `${baseURL}${value.category_image}` : "/img/gallery/1.jpg"} className="venobox" data-gall="gallery">
+                                                        <img src={value.category_image ? `${baseURL}${value.category_image}` : "/img/gallery/1.jpg"} alt={value.category_name || "Category"} />
                                                         <div className="gallery-caption text-center">
                                                             <i className="fa fa-heart-o" />
                                                             <h3>{value.category_name}</h3>

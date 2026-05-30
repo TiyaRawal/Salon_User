@@ -3,7 +3,7 @@ import Header from '../common/Header'
 import Footer from '../common/Footer'
 import Breadcrumbs from '../common/Breadcrumbs'
 import HomeAppointment from '../common/HomeAppointment'
-import api from '../utils/AxiosConfig'
+import api, { baseURL } from '../utils/AxiosConfig'
 import { Link } from 'react-router-dom'
 
 function Categories() {
@@ -74,7 +74,7 @@ function CategoriesCard() {
                                             <div className="col-sm-6 col-md-4">
                                                 <div className="gallery-item wow fadeIn">
                                                     <Link to={`/subcategoriesbycategory/${value._id}`} className="venobox" data-gall="gallery">
-                                                        <img src={value.category_image ? `http://localhost:8000${value.category_image}` : "/img/gallery/1.jpg"} style={{height:"100%", width:"100%"}} alt={value.category_name || "Category"} />
+                                                        <img src={value.category_image ? `${baseURL}${value.category_image}` : "/img/gallery/1.jpg"} style={{height:"100%", width:"100%"}} alt={value.category_name || "Category"} />
                                                         <div className="gallery-caption text-center">
                                                             <i className="fa fa-heart-o" />
                                                             <h3>{value.category_name}</h3>
