@@ -2,8 +2,10 @@ import axios from "axios";
 import CheckToken from "./CheckToken";
 import Logout from "./Logout";
 
+const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+
 const api=axios.create({
-    baseURL:"http://localhost:8000"
+    baseURL: baseURL
 })
 api.interceptors.request.use((config)=>{
     const token=CheckToken()
@@ -24,3 +26,4 @@ api.interceptors.response.use(
 )
 
 export default api
+export { baseURL }
